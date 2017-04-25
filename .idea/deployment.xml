@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="qc">
+    <serverData>
+      <paths name="qc">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/cla_tool" local="$PROJECT_DIR$/../cla_tool" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
