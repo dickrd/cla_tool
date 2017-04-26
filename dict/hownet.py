@@ -1,6 +1,6 @@
 # coding=utf-8
 from util import file_util
-import thulac
+import jieba
 
 
 class Hownet(object):
@@ -22,9 +22,8 @@ class Hownet(object):
         self.strength_over = file_util.read_as_set(strength_path, encoding="gbk", skip=202)
 
     def score(self, sentence):
-        score = 0
-        nlp = thulac.thulac(seg_only=True)
-        terms = nlp.cut(sentence)
+        score = 0.0
+        terms = jieba.cut(sentence)
 
         sign = 1
         count = 0
@@ -64,4 +63,7 @@ class Hownet(object):
 
             if term == u"不":
                 sign = -sign
+                continue
+
+            count -= 1
         return score / count
