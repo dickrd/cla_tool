@@ -1,9 +1,10 @@
 # coding=utf-8
 from util import file_util
-import jieba
 
 
 class Hownet(object):
+    """Class for reading hownet vocabulary and score the sentiment of a sentence based on it."""
+
     def __init__(self,
                  positive_emotions_path,
                  positive_judgement_path,
@@ -21,13 +22,12 @@ class Hownet(object):
         self.strength_week = file_util.read_as_set(strength_path, encoding="gbk", skip=188)
         self.strength_over = file_util.read_as_set(strength_path, encoding="gbk", skip=202)
 
-    def score(self, sentence):
+    def score(self, words_of_sentence):
         score = 0.0
-        terms = jieba.cut(sentence)
 
         sign = 1
         count = 0
-        for term in terms:
+        for term in words_of_sentence:
             count += 1
             if self.positive_emotions.__contains__(term):
                 score += sign * 1.5

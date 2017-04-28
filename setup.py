@@ -11,5 +11,5 @@ setup(
     author='DickRD',
     author_email='dickdata7@gmail.com',
     description='Chinese language analyze tools.',
-    install_requires=['gensim', 'jieba']
+    install_requires=['gensim', 'jieba', 'sklearn']
 )

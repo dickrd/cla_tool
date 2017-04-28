@@ -1,5 +1,15 @@
 # coding=utf-8
 def read_as_set(path, encoding="utf-8", skip=0, skip_prefix=None, strip=None):
+    """
+    Read a text file and form a set using each line in it.
+    
+    :param path: Path to the file.
+    :param encoding: Encoding fo the text.
+    :param skip: Line count to skip.
+    :param skip_prefix: Skip lines with this prefix.
+    :param strip: Chars to be stripped out.
+    :return: A set in which is the non-empty lines of the file.
+    """
     result_set = set()
     skips = skip
     with open(path, 'r') as the_file:
@@ -20,6 +30,14 @@ def read_as_set(path, encoding="utf-8", skip=0, skip_prefix=None, strip=None):
 
 
 def cut_words_in(path, encoding="utf-8", strip=None):
+    """
+    Cut each line in the file into words and stores it in the same directory with a "cut_" prefix in file name.
+    
+    :param path: Path to the file to cut.
+    :param encoding: Encoding fo the file.
+    :param strip: Chars to be stripped out.
+    :return: Path to the result file.
+    """
     import jieba
     import os
     directory, filename = os.path.split(path)
