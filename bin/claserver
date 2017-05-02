@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+import drest
+
+api = drest.API("http://127.0.0.1:666")
+response = api.make_request("GET", "/data")
+
+if response.status != 200:
+    raise IOError("request failed.")
+
+print response.data

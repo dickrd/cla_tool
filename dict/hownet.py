@@ -23,6 +23,13 @@ class Hownet(object):
         self.strength_over = file_util.read_as_set(strength_path, encoding="gbk", skip=202)
 
     def score(self, words_of_sentence):
+        """
+        Score the sentiment of the sentence based on Hownet dictionary. Only supports Chinese.
+        The sentence should already be cut.
+        
+        :param words_of_sentence: Words of a sentence to be scored.
+        :return: Sentiment score. The higher the score is, the more positive the sentence.
+        """
         score = 0.0
 
         sign = 1
