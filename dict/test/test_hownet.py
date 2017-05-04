@@ -6,11 +6,11 @@ from dict.hownet import Hownet
 
 @pytest.fixture(scope="module")
 def setup_hownet():
-    hownet = Hownet(strength_path="res/程度级别词语.txt",
-                    positive_emotions_path="res/正面情感词语.txt",
-                    positive_judgement_path="res/正面评价词语.txt",
-                    negative_emotions_path="res/负面情感词语.txt",
-                    negative_judgement_path="res/负面评价词语.txt")
+    hownet = Hownet(strength_path="res/dict/s.txt",
+                    positive_emotions_path="res/dict/pe.txt",
+                    positive_judgement_path="res/dict/pj.txt",
+                    negative_emotions_path="res/dict/ne.txt",
+                    negative_judgement_path="res/dict/nj.txt")
     return hownet
 
 

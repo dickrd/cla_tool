@@ -5,7 +5,7 @@ import pytest
 
 @pytest.fixture(scope="module")
 def setup_model():
-    model = VectorModel(source_corpus_path="util/test/cut_test.txt")
+    model = VectorModel(source_corpus_path="res/test/words.txt")
     return model
 
 
@@ -20,6 +20,6 @@ def test_vector_model(setup_model):
 
 
 def test_save_vector_model(setup_model):
-    setup_model.save("learn/test/model.bin")
-    loaded_model = VectorModel("learn/test/model.bin")
+    setup_model.save("res/test/model.bin")
+    loaded_model = VectorModel("res/test/model.bin")
     assert loaded_model.model is not None

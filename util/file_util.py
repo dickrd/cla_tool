@@ -13,8 +13,7 @@ def read_as_set(path, encoding="utf-8", skip=0, skip_prefix=None, strip=None):
     result_set = set()
     skips = skip
     with open(path, 'r') as the_file:
-        lines = the_file.readlines()
-        for line in lines:
+        for line in the_file:
             if skips > 0:
                 skips -= 1
                 continue
@@ -41,10 +40,9 @@ def cut_words_in(path, encoding="utf-8", strip=None):
     import jieba
     import os
     directory, filename = os.path.split(path)
-    result_path = directory + "/cut_" + filename
+    result_path = directory + "/words_in_" + filename
     with open(path, 'r') as the_file, open(result_path, 'w') as result_file:
-        lines = the_file.readlines()
-        for line in lines:
+        for line in the_file:
             content = line.decode(encoding=encoding).strip(strip)
             if not content:
                 continue

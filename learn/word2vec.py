@@ -22,6 +22,7 @@ class VectorModel(object):
         """
         Train an uninitialized model using corpus.
         Each line in the corpus should be words of a sentence separated by space.
+        
         :param source_corpus_path: Path to corpus.
         :return: Nothing.
         """
@@ -34,6 +35,7 @@ class VectorModel(object):
     def to_vector(self, words_of_sentence):
         """
         Translate a list of words into a vector.
+        
         :param words_of_sentence: A list of words of a sentence.
         :return: The vector representation of the sentence.
         """

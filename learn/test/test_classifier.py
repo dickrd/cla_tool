@@ -6,8 +6,8 @@ from learn.classifier import TraditionalClassifier
 
 @pytest.fixture(scope="module")
 def setup_classifier():
-    classifier = TraditionalClassifier(vector_model_path="learn/test/model.bin",
-                                       training_data_path="learn/test/train.txt")
+    classifier = TraditionalClassifier(vector_model_path="res/test/model.bin",
+                                       training_data_path="res/test/labeled_train.txt")
     return classifier
 
 
@@ -21,6 +21,6 @@ def test_traditional_classifier(setup_classifier):
 
 
 def test_traditional_classifier_accuracy(setup_classifier):
-    result = setup_classifier.test_with(test_data_path="learn/test/test.txt")
+    result = setup_classifier.test_with(test_data_path="res/test/labeled_test.txt")
     print result
     assert result > 0.5
