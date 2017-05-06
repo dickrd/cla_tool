@@ -44,16 +44,16 @@ def main():
 
         if args.stored_model:
             model = VectorModel(source_file_path=args.stored_model)
+            result_file = args.stored_model
             print "Loaded previous model: " + args.stored_model
         else:
+            result_file = "model.dat"
             model = VectorModel()
 
         print "Learning vector presentation of " + args.input
         model.train(source_corpus_path=args.input)
 
-        if not args.output_file:
-            result_file = "model.dat"
-        else:
+        if args.output_file:
             result_file = args.output_file
         model.save(result_file)
         print "Done. Model saved to " + result_file

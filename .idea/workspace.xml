@@ -2,39 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa7b5948-f351-4992-a03d-2b2de2b83778" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cla/util/test/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MANIFEST.in" afterPath="$PROJECT_DIR$/MANIFEST.in" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dict/__init__.py" afterPath="$PROJECT_DIR$/cla/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dict/hownet.py" afterPath="$PROJECT_DIR$/cla/dict/hownet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dict/test/__init__.py" afterPath="$PROJECT_DIR$/cla/dict/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dict/test/test_hownet.py" afterPath="$PROJECT_DIR$/cla/dict/test/test_hownet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/learn/__init__.py" afterPath="$PROJECT_DIR$/cla/dict/test/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/learn/classifier.py" afterPath="$PROJECT_DIR$/cla/learn/classifier.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/learn/test/__init__.py" afterPath="$PROJECT_DIR$/cla/learn/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/learn/test/test_classifier.py" afterPath="$PROJECT_DIR$/cla/learn/test/test_classifier.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/learn/test/test_word2vec.py" afterPath="$PROJECT_DIR$/cla/learn/test/test_word2vec.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/learn/word2vec.py" afterPath="$PROJECT_DIR$/cla/learn/word2vec.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/dict/ne.txt" afterPath="$PROJECT_DIR$/cla/res/dict/ne.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/dict/nj.txt" afterPath="$PROJECT_DIR$/cla/res/dict/nj.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/dict/pe.txt" afterPath="$PROJECT_DIR$/cla/res/dict/pe.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/dict/pj.txt" afterPath="$PROJECT_DIR$/cla/res/dict/pj.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/dict/r.txt" afterPath="$PROJECT_DIR$/cla/res/dict/r.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/dict/s.txt" afterPath="$PROJECT_DIR$/cla/res/dict/s.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/test/labeled_test.txt" afterPath="$PROJECT_DIR$/cla/res/test/labeled_test.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/test/labeled_train.txt" afterPath="$PROJECT_DIR$/cla/res/test/labeled_train.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/test/model.bin" afterPath="$PROJECT_DIR$/cla/res/test/model.bin" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/test/qq.txt" afterPath="$PROJECT_DIR$/cla/res/test/qq.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/test/sentences.txt" afterPath="$PROJECT_DIR$/cla/res/test/sentences.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/test/words.txt" afterPath="$PROJECT_DIR$/cla/res/test/words.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/util/__init__.py" afterPath="$PROJECT_DIR$/cla/learn/test/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/util/chat_util.py" afterPath="$PROJECT_DIR$/cla/util/chat_util.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/util/file_util.py" afterPath="$PROJECT_DIR$/cla/util/file_util.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/util/test/__init__.py" afterPath="$PROJECT_DIR$/cla/util/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/util/test/test_chat_util.py" afterPath="$PROJECT_DIR$/cla/util/test/test_chat_util.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/util/test/test_file_util.py" afterPath="$PROJECT_DIR$/cla/util/test/test_file_util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cla" afterPath="$PROJECT_DIR$/bin/cla" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cla/util/chat_util.py" afterPath="$PROJECT_DIR$/cla/util/chat_util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cla/util/file_util.py" afterPath="$PROJECT_DIR$/cla/util/file_util.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +31,8 @@
       <file leaf-file-name="chat_util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cla/util/chat_util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="48">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,8 +41,8 @@
       <file leaf-file-name="file_util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cla/util/file_util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="976">
+              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="288">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -116,6 +87,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="16">
               <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cla" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/cla">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -136,16 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cla/util/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,7 +178,6 @@
         <option value="$PROJECT_DIR$/util/chat_util.py" />
         <option value="$PROJECT_DIR$/learn/word2vec.py" />
         <option value="$PROJECT_DIR$/res/test/sentences.txt" />
-        <option value="$PROJECT_DIR$/bin/cla" />
         <option value="$PROJECT_DIR$/cla/dict/hownet.py" />
         <option value="$PROJECT_DIR$/cla/dict/test/test_hownet.py" />
         <option value="$PROJECT_DIR$/cla/learn/test/test_classifier.py" />
@@ -217,6 +187,9 @@
         <option value="$PROJECT_DIR$/cla/util/test/test_file_util.py" />
         <option value="$PROJECT_DIR$/MANIFEST.in" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/cla/util/chat_util.py" />
+        <option value="$PROJECT_DIR$/cla/util/file_util.py" />
+        <option value="$PROJECT_DIR$/bin/cla" />
       </list>
     </option>
   </component>
@@ -277,6 +250,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cla" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cla_tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cla_tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cla" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1049,7 +1040,7 @@
       <workItem from="1493004498503" duration="64223000" />
       <workItem from="1494050183020" duration="45000" />
       <workItem from="1494050259900" duration="2315000" />
-      <workItem from="1494053181925" duration="8925000" />
+      <workItem from="1494053181925" duration="10717000" />
     </task>
     <task id="LOCAL-00001" summary="Update cut method.">
       <created>1493185377850</created>
@@ -1107,7 +1098,28 @@
       <option name="project" value="LOCAL" />
       <updated>1494066216585</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bug fix.">
+      <created>1494073568730</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1494073568730</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commandline bug fix.">
+      <created>1494074554406</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1494074554406</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Commandline bug fix.">
+      <created>1494074571483</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1494074571483</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1143,7 +1155,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75508000" />
+    <option name="totallyTimeSpent" value="77300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1224,7 +1236,9 @@
     <MESSAGE value="Bug fix and reformat." />
     <MESSAGE value="Commandline update." />
     <MESSAGE value="Prepare for release." />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepare for release." />
+    <MESSAGE value="Bug fix." />
+    <MESSAGE value="Commandline bug fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commandline bug fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1307,6 +1321,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1381,14 +1396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/cla">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cla/learn/test/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1445,22 +1452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cla/util/chat_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cla/util/file_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cla/learn/word2vec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1497,11 +1488,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="288">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cla/util/file_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="976">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cla/util/chat_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/cla">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -35,14 +35,15 @@ def cut_words_in(path, encoding="utf-8", strip=None, output_path=None):
     :param path: Path to the file to cut.
     :param encoding: Encoding fo the file.
     :param strip: Chars to be stripped out.
+    :param output_path: Path to save output.
     :return: Path to the result file.
     """
     import jieba
 
     if not output_path:
         import os
-        directory, filename = os.path.split(path)
-        result_path = directory + "/words_in_" + filename
+        _, filename = os.path.split(path)
+        result_path = "words_in_" + filename
     else:
         result_path = output_path
 

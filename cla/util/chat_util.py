@@ -5,8 +5,8 @@ def process_qq_history(path, skip_system=True, encoding="utf-8", strip=None, out
     # Generate result filename.
     if not output_path:
         import os
-        directory, filename = os.path.split(path)
-        result_path = directory + "/sentences_in_" + filename
+        _, filename = os.path.split(path)
+        result_path = "sentences_in_" + filename
     else:
         result_path = output_path
 
