@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='cla_tool',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(exclude=['res']),
     url='https://github.com/dickrd/cla_tool',
     license='Apache License 2.0',
@@ -13,6 +13,6 @@ setup(
     description='Chinese language analyze tools.',
     scripts=['bin/cla'],
     install_requires=['gensim', 'jieba', 'sklearn'],
-    test_requires=['pytest'],
-    test_suit="pytest"
+    tests_require=['pytest'],
+    test_suite="pytest"
 )

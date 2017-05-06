@@ -1,6 +1,6 @@
 from sklearn.linear_model import LogisticRegression
 
-from learn.word2vec import VectorModel
+from cla.learn.word2vec import VectorModel
 
 
 class TraditionalClassifier(object):

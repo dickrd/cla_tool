@@ -1,5 +1,5 @@
 # coding=utf-8
-from learn.word2vec import VectorModel
+from cla.learn.word2vec import VectorModel
 import pytest
 
 

@@ -1,5 +1,5 @@
 # coding=utf-8
-from util import chat_util
+from cla.util import chat_util
 
 
 def test_process_qq_history():

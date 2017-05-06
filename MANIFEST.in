@@ -1,1 +1,1 @@
-recursive-include res *
+recursive-include cla/res *

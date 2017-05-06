@@ -1,7 +1,7 @@
 # coding=utf-8
 import pytest
 
-from dict.hownet import Hownet
+from cla.dict.hownet import Hownet
 
 
 @pytest.fixture(scope="module")

@@ -1,5 +1,5 @@
 # coding=utf-8
-from util import file_util
+from cla.util import file_util
 
 
 def test_read_strength():

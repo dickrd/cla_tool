@@ -1,7 +1,7 @@
 # coding=utf-8
 import pytest
 
-from learn.classifier import TraditionalClassifier
+from cla.learn.classifier import TraditionalClassifier
 
 
 @pytest.fixture(scope="module")
