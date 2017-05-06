@@ -11,7 +11,7 @@ setup(
     author='DickRD',
     author_email='dickdata7@gmail.com',
     description='Chinese language analyze tools.',
-    scripts=['bin/claserver'],
+    scripts=['bin/cla'],
     install_requires=['gensim', 'jieba', 'sklearn'],
     test_requires=['pytest'],
     test_suit="pytest"

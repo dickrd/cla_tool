@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa7b5948-f351-4992-a03d-2b2de2b83778" name="Default" comment="Bug fix and reformat.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+    <list default="true" id="aa7b5948-f351-4992-a03d-2b2de2b83778" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cla" afterPath="$PROJECT_DIR$/bin/cla" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/learn/word2vec.py" afterPath="$PROJECT_DIR$/learn/word2vec.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/chat_util.py" afterPath="$PROJECT_DIR$/util/chat_util.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/file_util.py" afterPath="$PROJECT_DIR$/util/file_util.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cla" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cla" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/cla">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="617">
@@ -78,6 +73,29 @@
             <state relative-caret-position="80">
               <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -145,12 +163,12 @@
         <option value="$PROJECT_DIR$/LICENCE.txt" />
         <option value="$PROJECT_DIR$/res/dict/nj.txt" />
         <option value="$PROJECT_DIR$/learn/test/test_word2vec.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/util/file_util.py" />
         <option value="$PROJECT_DIR$/util/chat_util.py" />
         <option value="$PROJECT_DIR$/learn/word2vec.py" />
         <option value="$PROJECT_DIR$/res/test/sentences.txt" />
         <option value="$PROJECT_DIR$/bin/cla" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -1100,7 +1118,7 @@
       <workItem from="1493004498503" duration="64223000" />
       <workItem from="1494050183020" duration="45000" />
       <workItem from="1494050259900" duration="2315000" />
-      <workItem from="1494053181925" duration="5520000" />
+      <workItem from="1494053181925" duration="6532000" />
     </task>
     <task id="LOCAL-00001" summary="Update cut method.">
       <created>1493185377850</created>
@@ -1137,7 +1155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493694896558</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commandline update.">
+      <created>1494058726095</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1494058726095</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1173,7 +1198,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72103000" />
+    <option name="totallyTimeSpent" value="73115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1252,7 +1277,8 @@
     <MESSAGE value="Fix." />
     <MESSAGE value="Fix more test." />
     <MESSAGE value="Bug fix and reformat." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix and reformat." />
+    <MESSAGE value="Commandline update." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commandline update." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,7 +1295,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons/__builtin__.py" />
     <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/_pytest/vendored_packages/pluggy.py" />
     <entry file="file://$PROJECT_DIR$/.cache/v/cache/lastfailed" />
     <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/_pytest/python.py" />
@@ -1414,14 +1439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/test/test_chat_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1498,6 +1515,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
           <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
