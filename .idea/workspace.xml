@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa7b5948-f351-4992-a03d-2b2de2b83778" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cla" afterPath="$PROJECT_DIR$/bin/cla" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cla/learn/word2vec.py" afterPath="$PROJECT_DIR$/cla/learn/word2vec.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +61,8 @@
       <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="96">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -84,8 +83,8 @@
       <file leaf-file-name="cla" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/cla">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
+            <state relative-caret-position="-7">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,11 +174,11 @@
         <option value="$PROJECT_DIR$/cla/util/test/test_chat_util.py" />
         <option value="$PROJECT_DIR$/cla/util/test/test_file_util.py" />
         <option value="$PROJECT_DIR$/MANIFEST.in" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/cla/util/chat_util.py" />
         <option value="$PROJECT_DIR$/cla/util/file_util.py" />
         <option value="$PROJECT_DIR$/cla/learn/word2vec.py" />
         <option value="$PROJECT_DIR$/bin/cla" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -1048,7 +1047,7 @@
       <workItem from="1493004498503" duration="64223000" />
       <workItem from="1494050183020" duration="45000" />
       <workItem from="1494050259900" duration="2315000" />
-      <workItem from="1494053181925" duration="11308000" />
+      <workItem from="1494053181925" duration="11386000" />
     </task>
     <task id="LOCAL-00001" summary="Update cut method.">
       <created>1493185377850</created>
@@ -1134,7 +1133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494076078372</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fix issue about model update.">
+      <created>1494076680980</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1494076680980</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1170,7 +1176,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77891000" />
+    <option name="totallyTimeSpent" value="77969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1254,7 +1260,8 @@
     <MESSAGE value="Bug fix." />
     <MESSAGE value="Commandline bug fix." />
     <MESSAGE value="Change default save location." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change default save location." />
+    <MESSAGE value="Fix issue about model update." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix issue about model update." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1476,16 +1483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cla/util/file_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="976">
@@ -1528,10 +1525,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/cla">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
+        <state relative-caret-position="-7">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
