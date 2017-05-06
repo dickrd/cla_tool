@@ -21,16 +21,17 @@ class VectorModel(object):
         if source_corpus_path:
             self.train(source_corpus_path)
 
-    def train(self, source_corpus_path):
+    def train(self, source_corpus_path, update=False):
         """
         Train an uninitialized model using corpus.
         Each line in the corpus should be words of a sentence separated by space.
         
         :param source_corpus_path: Path to corpus.
+        :param update: Update vocab.
         :return: Nothing.
         """
         documents = TaggedLineDocument(source_corpus_path)
-        self.model.build_vocab(documents)
+        self.model.build_vocab(documents, update=update)
         self.model.train(documents, total_examples=self.model.corpus_count, epochs=self.model.iter)
 
     def save(self, path):

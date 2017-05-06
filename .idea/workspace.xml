@@ -4,8 +4,7 @@
     <list default="true" id="aa7b5948-f351-4992-a03d-2b2de2b83778" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cla" afterPath="$PROJECT_DIR$/bin/cla" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cla/util/chat_util.py" afterPath="$PROJECT_DIR$/cla/util/chat_util.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cla/util/file_util.py" afterPath="$PROJECT_DIR$/cla/util/file_util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cla/learn/word2vec.py" afterPath="$PROJECT_DIR$/cla/learn/word2vec.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,16 +17,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_file_util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cla/util/test/test_file_util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="chat_util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cla/util/chat_util.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,8 +50,8 @@
       <file leaf-file-name="word2vec.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cla/learn/word2vec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
               <folding>
                 <element signature="e#15#48#0" expanded="true" />
               </folding>
@@ -95,8 +84,8 @@
       <file leaf-file-name="cla" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/cla">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+            <state relative-caret-position="409">
+              <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -189,6 +178,7 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/cla/util/chat_util.py" />
         <option value="$PROJECT_DIR$/cla/util/file_util.py" />
+        <option value="$PROJECT_DIR$/cla/learn/word2vec.py" />
         <option value="$PROJECT_DIR$/bin/cla" />
       </list>
     </option>
@@ -268,6 +258,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cla_tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cla_tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cla" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1040,7 +1048,7 @@
       <workItem from="1493004498503" duration="64223000" />
       <workItem from="1494050183020" duration="45000" />
       <workItem from="1494050259900" duration="2315000" />
-      <workItem from="1494053181925" duration="10717000" />
+      <workItem from="1494053181925" duration="11308000" />
     </task>
     <task id="LOCAL-00001" summary="Update cut method.">
       <created>1493185377850</created>
@@ -1119,7 +1127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494074571483</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Change default save location.">
+      <created>1494076078372</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1494076078372</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1155,7 +1170,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77300000" />
+    <option name="totallyTimeSpent" value="77891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1238,7 +1253,8 @@
     <MESSAGE value="Prepare for release." />
     <MESSAGE value="Bug fix." />
     <MESSAGE value="Commandline bug fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commandline bug fix." />
+    <MESSAGE value="Change default save location." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change default save location." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1353,14 +1369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/gensim/models/doc2vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="634" column="84" lean-forward="false" selection-start-line="634" selection-start-column="80" selection-end-line="634" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cla/res/test/sentences.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -1373,14 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="739">
           <caret line="337" column="10" lean-forward="false" selection-start-line="337" selection-start-column="10" selection-end-line="337" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/gensim/models/word2vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="1233" column="31" lean-forward="true" selection-start-line="1233" selection-start-column="31" selection-end-line="1233" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1452,16 +1452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cla/learn/word2vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cla/learn/classifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -1512,10 +1502,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/gensim/models/doc2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-757">
+          <caret line="545" column="8" lean-forward="false" selection-start-line="545" selection-start-column="8" selection-end-line="545" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/gensim/models/word2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="704" column="33" lean-forward="false" selection-start-line="704" selection-start-column="33" selection-end-line="704" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cla/learn/word2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+          <folding>
+            <element signature="e#15#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/cla">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+        <state relative-caret-position="409">
+          <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
           <folding />
         </state>
       </provider>
