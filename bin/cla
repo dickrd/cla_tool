@@ -14,7 +14,7 @@ def main():
     args = parser.parse_args()
 
     if args.action == "extract":
-        from util import chat_util
+        from cla.util import chat_util
         if not args.input:
             print "Source file is required!"
             return
@@ -27,7 +27,7 @@ def main():
             print "Unsupported type: " + args.source_type
 
     elif args.action == "cut":
-        from util import file_util
+        from cla.util import file_util
         if not args.input:
             print "Sentence input is required!"
             return
@@ -37,7 +37,7 @@ def main():
         print "Done."
 
     elif args.action == "learn":
-        from learn.word2vec import VectorModel
+        from cla.learn.word2vec import VectorModel
         if not args.input:
             print "Corpus input is required!"
             return
@@ -59,7 +59,7 @@ def main():
         print "Done. Model saved to " + result_file
 
     elif args.action == "word2vec":
-        from learn.word2vec import VectorModel
+        from cla.learn.word2vec import VectorModel
         if not args.input:
             print "A input word is required!"
             return
@@ -71,7 +71,7 @@ def main():
         print model.to_vector(args.input)
 
     elif args.action == "similar":
-        from learn.word2vec import VectorModel
+        from cla.learn.word2vec import VectorModel
         if not args.input:
             print "A input word is required!"
             return
@@ -84,7 +84,7 @@ def main():
             print word.encode(args.encoding) + "\t%.5f" % similarity
 
     else:
-        print "Unsupported action: " + args.method
+        print "Unsupported action: " + args.action
 
 if __name__ == '__main__':
     main()
