@@ -83,7 +83,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="true" project-jdk-name="Remote Python 2.7.12 (ssh://ubuntu@qc.hehehey.com:22/home/ubuntu/tensorflow/bin/python)" project-jdk-type="Python SDK">
-    <output url="file://$PROJECT_DIR$/../cla_tool/out" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="false" project-jdk-name="Remote Python 2.7.12 (ssh://ubuntu@qc.hehehey.com:22/home/ubuntu/tensorflow/bin/python)" project-jdk-type="Python SDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

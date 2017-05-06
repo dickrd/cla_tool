@@ -1,25 +1,90 @@
 #!/usr/bin/env python
 # coding=utf-8
 import argparse
-import drest
 
 
-def pipline():
-    api = drest.API("http://127.0.0.1:666")
-    response = api.make_request("GET", "/data")
+def main():
+    parser = argparse.ArgumentParser(description='chinese language tools command line.')
+    parser.add_argument("action", help="action to perform, including extract, cut, learn, word2vec, similar")
+    parser.add_argument("input", nargs="?", help="input for the action")
+    parser.add_argument("-o", "--output-file", help="file to save output")
+    parser.add_argument("-m", "--stored-model", help="saved word2vec model")
+    parser.add_argument("-e", "--encoding", default="utf-8", help="specify file encoding")
+    parser.add_argument("-t", "--source-type", default="qq", help="source type of the input, supported types are qq")
+    args = parser.parse_args()
 
-    if response.status != 200:
-        raise IOError("request failed.")
+    if args.action == "extract":
+        from util import chat_util
+        if not args.input:
+            print "Source file is required!"
+            return
 
-    print response.data
+        print "Prepare extracting sentences from " + args.input
+        if args.source_type == "qq":
+            chat_util.process_qq_history(args.input, encoding=args.encoding, output_path=args.output_file)
+            print "Done."
+        else:
+            print "Unsupported type: " + args.source_type
 
-parser = argparse.ArgumentParser(description='chinese language tools command line.')
-parser.add_argument("method", help="tool to use, including server, extract and model")
-parser.add_argument("-i", "--input-file", help="input file to use")
-parser.add_argument("-t", "--input-type", default="qq", help="source type of the input, supported types are qq, wechat")
-args = parser.parse_args()
+    elif args.action == "cut":
+        from util import file_util
+        if not args.input:
+            print "Sentence input is required!"
+            return
 
-if args.method == "server":
-    print "Start server."
-elif args.method == "extract":
-    print args.input_file
+        print "Cutting sentences in " + args.input
+        file_util.cut_words_in(args.input, encoding=args.encoding, output_path=args.output_file)
+        print "Done."
+
+    elif args.action == "learn":
+        from learn.word2vec import VectorModel
+        if not args.input:
+            print "Corpus input is required!"
+            return
+
+        if args.stored_model:
+            model = VectorModel(source_file_path=args.stored_model)
+            print "Loaded previous model: " + args.stored_model
+        else:
+            model = VectorModel()
+
+        print "Learning vector presentation of " + args.input
+        model.train(source_corpus_path=args.input)
+
+        if not args.output_file:
+            result_file = "model.dat"
+        else:
+            result_file = args.output_file
+        model.save(result_file)
+        print "Done. Model saved to " + result_file
+
+    elif args.action == "word2vec":
+        from learn.word2vec import VectorModel
+        if not args.input:
+            print "A input word is required!"
+            return
+        if not args.stored_model:
+            print "A stored word2vec model is required! (--stored-model)"
+            return
+
+        model = VectorModel(source_file_path=args.stored_model)
+        print model.to_vector(args.input)
+
+    elif args.action == "similar":
+        from learn.word2vec import VectorModel
+        if not args.input:
+            print "A input word is required!"
+            return
+        if not args.stored_model:
+            print "A stored word2vec model is required! (--stored-model)"
+            return
+
+        model = VectorModel(source_file_path=args.stored_model)
+        for word, similarity in model.model.similar_by_word(args.input.decode(args.encoding)):
+            print word.encode(args.encoding) + "\t%.5f" % similarity
+
+    else:
+        print "Unsupported action: " + args.method
+
+if __name__ == '__main__':
+    main()

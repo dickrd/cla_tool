@@ -15,7 +15,10 @@ class VectorModel(object):
         """
         if source_file_path:
             self.model = Doc2Vec.load(source_file_path)
-        elif source_corpus_path:
+        else:
+            self.model = Doc2Vec(min_count=1, window=10, size=100, sample=1e-4, negative=5, workers=8)
+
+        if source_corpus_path:
             self.train(source_corpus_path)
 
     def train(self, source_corpus_path):
@@ -27,7 +30,8 @@ class VectorModel(object):
         :return: Nothing.
         """
         documents = TaggedLineDocument(source_corpus_path)
-        self.model = Doc2Vec(documents=documents, min_count=1, window=10, size=100, sample=1e-4, negative=5, workers=8)
+        self.model.build_vocab(documents)
+        self.model.train(documents, total_examples=self.model.corpus_count, epochs=self.model.iter)
 
     def save(self, path):
         self.model.save(path)

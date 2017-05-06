@@ -1,10 +1,10 @@
 # coding=utf-8
 def process_qq_history(path, skip_system=True, encoding="utf-8", strip=None, output_path=None):
-    import os
     import re
 
     # Generate result filename.
     if not output_path:
+        import os
         directory, filename = os.path.split(path)
         result_path = directory + "/sentences_in_" + filename
     else:
@@ -38,7 +38,7 @@ def process_qq_history(path, skip_system=True, encoding="utf-8", strip=None, out
                 line_category += 1
 
             # Skip system messages.
-            if line_category is 1:
+            if line_category == 1:
                 if skip_system and "(10000)" in content:
                     skip += 1
                 continue

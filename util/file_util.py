@@ -28,7 +28,7 @@ def read_as_set(path, encoding="utf-8", skip=0, skip_prefix=None, strip=None):
     return result_set
 
 
-def cut_words_in(path, encoding="utf-8", strip=None):
+def cut_words_in(path, encoding="utf-8", strip=None, output_path=None):
     """
     Cut each line in the file into words and stores it in the same directory with a "cut_" prefix in file name.
     
@@ -38,9 +38,14 @@ def cut_words_in(path, encoding="utf-8", strip=None):
     :return: Path to the result file.
     """
     import jieba
-    import os
-    directory, filename = os.path.split(path)
-    result_path = directory + "/words_in_" + filename
+
+    if not output_path:
+        import os
+        directory, filename = os.path.split(path)
+        result_path = directory + "/words_in_" + filename
+    else:
+        result_path = output_path
+
     with open(path, 'r') as the_file, open(result_path, 'w') as result_file:
         for line in the_file:
             content = line.decode(encoding=encoding).strip(strip)
