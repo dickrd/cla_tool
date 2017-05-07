@@ -16,7 +16,7 @@ class VectorModel(object):
         if source_file_path:
             self.model = Doc2Vec.load(source_file_path)
         else:
-            self.model = Doc2Vec(min_count=1, window=10, size=100, sample=1e-4, negative=5, workers=8)
+            self.model = Doc2Vec(min_count=10, window=10, size=200, sample=1e-4, negative=5, workers=8)
 
         if source_corpus_path:
             self.train(source_corpus_path)
@@ -47,3 +47,25 @@ class VectorModel(object):
         if not self.model:
             raise RuntimeError("model not initialized.")
         return self.model.infer_vector(words_of_sentence)
+
+    def similar_documents(self, vector):
+        """
+        Find documents similar to the given vector.
+        
+        :param vector: Vector to find similar for.
+        :return: A list of similar document ids.
+        """
+        if not self.model:
+            raise RuntimeError("model not initialized.")
+        return self.model.docvecs.most_similar([vector])
+
+    def predict(self, words):
+        """
+        Predict output word for a list of context words.
+        
+        :param words: A list of context words.
+        :return: Predictions.
+        """
+        if not self.model:
+            raise RuntimeError("model not initialized.")
+        return self.model.predict_output_word(words)

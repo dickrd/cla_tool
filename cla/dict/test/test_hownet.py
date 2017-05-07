@@ -6,11 +6,11 @@ from cla.dict.hownet import Hownet
 
 @pytest.fixture(scope="module")
 def setup_hownet():
-    hownet = Hownet(strength_path="res/dict/s.txt",
-                    positive_emotions_path="res/dict/pe.txt",
-                    positive_judgement_path="res/dict/pj.txt",
-                    negative_emotions_path="res/dict/ne.txt",
-                    negative_judgement_path="res/dict/nj.txt")
+    hownet = Hownet(strength_path="cla/res/dict/s.txt",
+                    positive_emotions_path="cla/res/dict/pe.txt",
+                    positive_judgement_path="cla/res/dict/pj.txt",
+                    negative_emotions_path="cla/res/dict/ne.txt",
+                    negative_judgement_path="cla/res/dict/nj.txt")
     return hownet
 
 

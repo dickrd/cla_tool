@@ -53,9 +53,7 @@ def cut_words_in(path, encoding="utf-8", strip=None, output_path=None):
             if not content:
                 continue
 
-            result_line = ""
             terms = jieba.cut(content)
-            for term in terms:
-                result_line += term + " "
-            result_file.write(result_line.encode(encoding=encoding).strip() + "\n")
+            result_line = " ".join(map(unicode, terms))
+            result_file.write(result_line.encode(encoding=encoding) + "\n")
     return result_path

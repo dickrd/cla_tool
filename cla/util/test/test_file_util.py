@@ -3,7 +3,7 @@ from cla.util import file_util
 
 
 def test_read_strength():
-    strength_path = "res/dict/s.txt"
+    strength_path = "cla/res/dict/s.txt"
     most = file_util.read_as_set(strength_path, encoding="gbk", skip=3)
     ish = file_util.read_as_set(strength_path, encoding="gbk", skip=157)
 
@@ -14,7 +14,7 @@ def test_read_strength():
 
 
 def test_cut_words_in():
-    test_file_path = "res/test/sentences.txt"
+    test_file_path = "cla/res/test/sentences.txt"
     result_path = file_util.cut_words_in(test_file_path, )
     with open(result_path, 'r') as result_file:
         first_line = result_file.readline()
