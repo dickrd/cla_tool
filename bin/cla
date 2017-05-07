@@ -9,6 +9,7 @@ def main():
     parser.add_argument("input", nargs="?", help="input for the action")
     parser.add_argument("-o", "--output-file", help="file to save output")
     parser.add_argument("-m", "--stored-model", help="saved word2vec model")
+    parser.add_argument("-s", "--skip-lines", help="skip lines with the specified prefix when cutting")
     parser.add_argument("-e", "--encoding", default="utf-8", help="specify file encoding")
     parser.add_argument("-t", "--source-type", default="qq", help="source type of the input, supported types are qq")
     args = parser.parse_args()
@@ -33,7 +34,10 @@ def main():
             return
 
         print "Cutting sentences in " + args.input
-        result_path = file_util.cut_words_in(args.input, encoding=args.encoding, output_path=args.output_file)
+        result_path = file_util.cut_words_in(args.input,
+                                             encoding=args.encoding,
+                                             output_path=args.output_file,
+                                             skip_prefix=args.skip_lines)
         print "Done. Words saved ot " + result_path
 
     elif args.action == "learn":
