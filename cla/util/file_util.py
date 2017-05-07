@@ -1,12 +1,12 @@
 # coding=utf-8
-def read_as_set(path, encoding="utf-8", skip=0, skip_prefix=None, strip=None):
+def read_as_set(path, encoding="utf-8", skip=0, skip_prefixes=None, strip=None):
     """
     Read a text file and form a set using each line in it.
     
     :param path: Path to the file.
     :param encoding: Encoding fo the text.
     :param skip: Line count to skip.
-    :param skip_prefix: Skip lines with this prefix.
+    :param skip_prefixes: Skip lines with this prefix.
     :param strip: Chars to be stripped out.
     :return: A set in which is the non-empty lines of the file.
     """
@@ -21,20 +21,25 @@ def read_as_set(path, encoding="utf-8", skip=0, skip_prefix=None, strip=None):
             content = line.decode(encoding=encoding).strip(strip)
             if not content:
                 continue
-            if skip_prefix is not None and content.startswith(prefix=skip_prefix):
-                continue
+            if skip_prefixes:
+                skip = False
+                for item in skip_prefixes:
+                    if content.startswith(item.decode(encoding)):
+                        skip = True
+                if skip:
+                    continue
 
             result_set.add(content)
     return result_set
 
 
-def cut_words_in(path, encoding="utf-8", skip_prefix=None, strip=None, output_path=None):
+def cut_words_in(path, encoding="utf-8", skip_prefixes=None, strip=None, output_path=None):
     """
     Cut each line in the file into words and stores it in the same directory with a "cut_" prefix in file name.
     
     :param path: Path to the file to cut.
     :param encoding: Encoding fo the file.
-    :param skip_prefix: Lines start with this prefix will be skipped.
+    :param skip_prefixes: Lines start with this prefix will be skipped.
     :param strip: Chars to be stripped out.
     :param output_path: Path to save output.
     :return: Path to the result file.
@@ -54,8 +59,13 @@ def cut_words_in(path, encoding="utf-8", skip_prefix=None, strip=None, output_pa
             content = line.decode(encoding=encoding).strip(strip)
             if not content:
                 continue
-            if skip_prefix is not None and content.startswith(prefix=skip_prefix):
-                continue
+            if skip_prefixes:
+                skip = False
+                for item in skip_prefixes:
+                    if content.startswith(item.decode(encoding)):
+                        skip = True
+                if skip:
+                    continue
 
             content = ''.join(ch for ch in content if category(ch)[0] != 'P')
             terms = jieba.cut(content)
