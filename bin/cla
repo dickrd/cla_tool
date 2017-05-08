@@ -10,6 +10,7 @@ def main():
                                        "similar, classify, server")
     parser.add_argument("input", nargs="?", help="input for the action")
     parser.add_argument("-o", "--output-file", help="file to save output")
+    parser.add_argument("-p", "--port", default=8888, type=int, help="server port to listen")
     parser.add_argument("-m", "--stored-model", help="saved word2vec model")
     parser.add_argument("-t", "--training-data", help="labeled data to train classifier")
     parser.add_argument("-s", "--skip-lines", nargs="+", help="skip lines with the specified prefixes when cutting")
@@ -134,16 +135,21 @@ def main():
                 output_file.write(classified + " " + line.encode(encoding=args.encoding) + "\n")
 
     elif args.action == "server":
-        import SimpleHTTPServer
         import SocketServer
+        from BaseHTTPServer import BaseHTTPRequestHandler
 
-        PORT = 8000
+        # noinspection PyPep8Naming,PyClassHasNoInit
+        class Handler(BaseHTTPRequestHandler):
+            def do_GET(self):
+                splits = self.path.split("/")
+                self.send_response(200)
+                self.send_header("Content-type", "application/json")
+                self.end_headers()
+                self.wfile.write(splits)
 
-        Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+        httpd = SocketServer.TCPServer(("", args.port), Handler)
 
-        httpd = SocketServer.TCPServer(("", PORT), Handler)
-
-        print "serving at port", PORT
+        print "Serving at port: ", args.port
         httpd.serve_forever()
 
     else:
