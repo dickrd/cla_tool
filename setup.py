@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='cla_tool',
-    version='1.0.4',
+    version='1.1.0',
     packages=find_packages(exclude=['res']),
     url='https://github.com/dickrd/cla_tool',
     license='Apache License 2.0',

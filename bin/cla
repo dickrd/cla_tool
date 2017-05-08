@@ -5,13 +5,16 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(description='chinese language tools command line.')
-    parser.add_argument("action", help="action to perform, including extract, cut, learn, doc2vec, similar")
+    parser.add_argument("action", help="action to perform, including "
+                                       "extract, cut, learn, doc2vec, "
+                                       "similar, classify, server")
     parser.add_argument("input", nargs="?", help="input for the action")
     parser.add_argument("-o", "--output-file", help="file to save output")
     parser.add_argument("-m", "--stored-model", help="saved word2vec model")
+    parser.add_argument("-t", "--training-data", help="labeled data to train classifier")
     parser.add_argument("-s", "--skip-lines", nargs="+", help="skip lines with the specified prefixes when cutting")
     parser.add_argument("-e", "--encoding", default="utf-8", help="specify file encoding")
-    parser.add_argument("-t", "--source-type", default="qq", help="source type of the input, supported types are qq")
+    parser.add_argument("--source-type", default="qq", help="source type of the input, supported types are qq")
     args = parser.parse_args()
 
     if args.action == "extract":
@@ -103,6 +106,45 @@ def main():
         model = VectorModel(source_file_path=args.stored_model)
         for word, similarity in model.model.similar_by_word(args.input.decode(args.encoding)):
             print word.encode(args.encoding) + "\t%.5f" % similarity
+
+    elif args.action == "classify":
+        from cla.learn.classifier import TraditionalClassifier
+        if not args.input:
+            print "File contains words is required!"
+            return
+        if not args.stored_model:
+            print "A stored word2vec model is required! (--stored-model)"
+            return
+        if not args.training_data:
+            print "Training labeled data is required! (--training-data)"
+            return
+
+        if not args.output_file:
+            import os
+            _, filename = os.path.split(args.input)
+            result_path = "classified_" + filename
+        else:
+            result_path = args.output_file
+
+        classifier = TraditionalClassifier(vector_model_path=args.stored_model, training_data_path=args.training_data)
+        with open(args.input, 'r') as input_file, open(result_path, 'w') as output_file:
+            for line in input_file:
+                line = line.decode(encoding=args.encoding)
+                classified = classifier.classify([line])[0]
+                output_file.write(classified + " " + line.encode(encoding=args.encoding) + "\n")
+
+    elif args.action == "server":
+        import SimpleHTTPServer
+        import SocketServer
+
+        PORT = 8000
+
+        Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+
+        httpd = SocketServer.TCPServer(("", PORT), Handler)
+
+        print "serving at port", PORT
+        httpd.serve_forever()
 
     else:
         print "Unsupported action: " + args.action

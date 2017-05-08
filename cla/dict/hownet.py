@@ -33,7 +33,7 @@ class Hownet(object):
         score = 0.0
 
         sign = 1
-        count = 0
+        count = 1
         for term in words_of_sentence:
             count += 1
             if self.positive_emotions.__contains__(term):
