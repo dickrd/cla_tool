@@ -1,5 +1,5 @@
 # coding=utf-8
-from cla.learn.topic import TopicModel
+from cla.learn.topic import TopicModel, TopicClustering
 from cla.util import util
 
 
@@ -26,3 +26,14 @@ def test_topic():
             for sentence in r[topic_id]:
                 output.write(sentence)
             output.write("\n")
+
+
+def test_clustering():
+    path = "cla/res/test/sentences.txt"
+    model = "cla/res/test/model.bin"
+    model = TopicClustering(vector_model_path=model, document_path=path, cut=False)
+    result = model.cluster([u"最", u"绝望", u"的", u"就是",
+                            u"当", u"你", u"神", u"开局", u"两波",
+                            u"蛮骑", u"直奔", u"你", u"而", u"来"])
+    print result
+    assert result[0] >= 0
