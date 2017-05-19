@@ -152,8 +152,6 @@ def main():
                     output_file.write(classified + " " + line.encode(encoding=args.encoding) + "\n")
 
     elif args.action == "topic":
-        from cla.learn.topic import TopicModel
-
         if not args.input:
             print "File contains sentences is required!"
             return
@@ -164,26 +162,60 @@ def main():
         else:
             result_path = args.output_file
 
-        model = TopicModel(args.input, cut=False, num_topics=20)
+        # =====
+        # KMeans method.
+        # -----
+        #
+        from cla.learn.topic import TopicClustering
+
+        if not args.stored_model:
+            print "A stored word2vec model is required! (--stored-model)"
+            return
+
+        model = TopicClustering(document_path=args.input, vector_model_path=args.stored_model, cut=False, n_clusters=20)
         r = {}
         with open(args.input, 'r') as input_file:
             for line in input_file:
-                candidates = model.identify_topic(util.cut_words(line.decode(encoding=args.encoding)))
+                candidates = model.cluster(util.cut_words(line.decode(encoding=args.encoding)))
                 if len(candidates) < 1:
                     continue
-                document_topic, _ = candidates[0]
+                document_topic = candidates[0]
                 if document_topic not in r:
                     r[document_topic] = []
                 r[document_topic].append(line)
 
         with open(result_path, 'w') as output:
             for topic_id in r:
-                topic_words = model.topic_words(topic_id, 10)
-                topic = str(topic_id) + ": " + " ".join([x for x, _ in topic_words]).encode(encoding=args.encoding)
+                topic = "Cluster " + str(topic_id)
                 output.write("=====\n" + topic + "\n-----\n")
                 for sentence in r[topic_id]:
                     output.write(sentence)
                 output.write("\n")
+        # =====
+        # LDA method.
+        # -----
+        #
+        # from cla.learn.topic import TopicModel
+        # model = TopicModel(args.input, cut=False, num_topics=20)
+        # r = {}
+        # with open(args.input, 'r') as input_file:
+        #     for line in input_file:
+        #         candidates = model.identify_topic(util.cut_words(line.decode(encoding=args.encoding)))
+        #         if len(candidates) < 1:
+        #             continue
+        #         document_topic, _ = candidates[0]
+        #         if document_topic not in r:
+        #             r[document_topic] = []
+        #         r[document_topic].append(line)
+        #
+        # with open(result_path, 'w') as output:
+        #     for topic_id in r:
+        #         topic_words = model.topic_words(topic_id, 10)
+        #         topic = str(topic_id) + ": " + " ".join([x for x, _ in topic_words]).encode(encoding=args.encoding)
+        #         output.write("=====\n" + topic + "\n-----\n")
+        #         for sentence in r[topic_id]:
+        #             output.write(sentence)
+        #         output.write("\n")
 
     else:
         print "Unsupported action: " + args.action

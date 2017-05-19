@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa7b5948-f351-4992-a03d-2b2de2b83778" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cla_tool/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cla_tool/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cla_tool/cla/learn/test/test_topic.py" afterPath="$PROJECT_DIR$/../cla_tool/cla/learn/test/test_topic.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cla_tool/cla/learn/topic.py" afterPath="$PROJECT_DIR$/../cla_tool/cla/learn/topic.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cla_tool/bin/cla" afterPath="$PROJECT_DIR$/../cla_tool/bin/cla" />
     </list>
     <ignored path="$PROJECT_DIR$/../cla_tool/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,14 +25,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cla" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cla" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../cla_tool/bin/cla">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="166" column="22" lean-forward="false" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
+            <state relative-caret-position="117">
+              <caret line="174" column="119" lean-forward="false" selection-start-line="174" selection-start-column="119" selection-end-line="174" selection-end-column="119" />
               <folding>
                 <element signature="e#37#52#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic_of_comments.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../cla_tool/topic_of_comments.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-640">
+              <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_topic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_topic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../cla_tool/cla/learn/test/test_topic.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
@@ -175,11 +184,11 @@
         <option value="$PROJECT_DIR$/../cla_tool/cla/util/chat_util.py" />
         <option value="$PROJECT_DIR$/../cla_tool/cla/learn/topic_model.py" />
         <option value="$PROJECT_DIR$/../cla_tool/cla/res/test/topics.txt" />
-        <option value="$PROJECT_DIR$/../cla_tool/bin/cla" />
-        <option value="$PROJECT_DIR$/../cla_tool/topic_of_comments.txt" />
         <option value="$PROJECT_DIR$/../cla_tool/cla/util/util.py" />
         <option value="$PROJECT_DIR$/../cla_tool/cla/learn/topic.py" />
         <option value="$PROJECT_DIR$/../cla_tool/cla/learn/test/test_topic.py" />
+        <option value="$PROJECT_DIR$/../cla_tool/bin/cla" />
+        <option value="$PROJECT_DIR$/../cla_tool/topic_of_comments.txt" />
       </list>
     </option>
   </component>
@@ -1114,7 +1123,7 @@
       <updated>1493004493817</updated>
       <workItem from="1493004498503" duration="80433000" />
       <workItem from="1494819044909" duration="792000" />
-      <workItem from="1495008028621" duration="29536000" />
+      <workItem from="1495008028621" duration="30659000" />
     </task>
     <task id="LOCAL-00001" summary="Update cut method.">
       <created>1493185377850</created>
@@ -1186,7 +1195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495181846394</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add clustering topic model.">
+      <created>1495184629298</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1495184629298</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1222,7 +1238,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110761000" />
+    <option name="totallyTimeSpent" value="111884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1247,7 +1263,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25716332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1305,7 +1321,8 @@
     <MESSAGE value="Server update." />
     <MESSAGE value="Add topic model and separate server function." />
     <MESSAGE value="Add topic model cli." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add topic model cli." />
+    <MESSAGE value="Add clustering topic model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add clustering topic model." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1551,20 +1568,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cla_tool/topic_of_comments.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1648">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../cla_tool/cla/learn/classifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="40" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1649,16 +1658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cla_tool/bin/cla">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="166" column="22" lean-forward="false" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
-          <folding>
-            <element signature="e#37#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.IntelliJIdea2017.1/system/remote_sources/-1221211361/-1184671564/_pytest/vendored_packages/pluggy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1681,6 +1680,24 @@
           <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
           <folding>
             <element signature="e#15#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cla_tool/topic_of_comments.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-640">
+          <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cla_tool/bin/cla">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="174" column="119" lean-forward="false" selection-start-line="174" selection-start-column="119" selection-end-line="174" selection-end-column="119" />
+          <folding>
+            <element signature="e#37#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
