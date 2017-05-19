@@ -9,7 +9,7 @@ def main():
     parser = argparse.ArgumentParser(description='chinese language tools command line.')
     parser.add_argument("action", help="action to perform, including "
                                        "extract, cut, learn, doc2vec, "
-                                       "similar, classify")
+                                       "similar, classify, topic")
     parser.add_argument("input", nargs="?", help="input for the action")
     parser.add_argument("-o", "--output-file", help="file to save output")
     parser.add_argument("-p", "--port", default=8888, type=int, help="server port to listen")
@@ -131,7 +131,7 @@ def main():
                     "words": []
                 }
                 words = util.cut_words(uri_data.decode(encoding=args.encoding))
-                r["label"] = classifier.classify([words])[0]
+                r["label"] = int(classifier.classify([words])[0])
                 for a_word in words:
                     r["words"].append(a_word.encode(encoding=args.encoding))
                 return r
@@ -151,8 +151,39 @@ def main():
                     classified = classifier.classify([line])[0]
                     output_file.write(classified + " " + line.encode(encoding=args.encoding) + "\n")
 
-    # elif args.action == "topic":
+    elif args.action == "topic":
+        from cla.learn.topic import TopicModel
 
+        if not args.input:
+            print "File contains sentences is required!"
+            return
+        if not args.output_file:
+            import os
+            _, filename = os.path.split(args.input)
+            result_path = "topic_of_" + filename
+        else:
+            result_path = args.output_file
+
+        model = TopicModel(args.input, cut=False, num_topics=20)
+        r = {}
+        with open(args.input, 'r') as input_file:
+            for line in input_file:
+                candidates = model.identify_topic(util.cut_words(line.decode(encoding=args.encoding)))
+                if len(candidates) < 1:
+                    continue
+                document_topic, _ = candidates[0]
+                if document_topic not in r:
+                    r[document_topic] = []
+                r[document_topic].append(line)
+
+        with open(result_path, 'w') as output:
+            for topic_id in r:
+                topic_words = model.topic_words(topic_id, 10)
+                topic = str(topic_id) + ": " + " ".join([x for x, _ in topic_words]).encode(encoding=args.encoding)
+                output.write("=====\n" + topic + "\n-----\n")
+                for sentence in r[topic_id]:
+                    output.write(sentence)
+                output.write("\n")
 
     else:
         print "Unsupported action: " + args.action

@@ -7,14 +7,14 @@ from cla.util.util import CutDocument
 class TopicModel(object):
 
     def __init__(self, documents, cut=True, num_topics=10):
-        self.document = CutDocument(documents, cut)
+        self.document = CutDocument(documents, cut, cleanup=True)
         self.dictionary = Dictionary(self.document)
         self.model = LdaModel(BowCorpus(self.document, self.dictionary),
                               id2word=self.dictionary,
                               num_topics=num_topics)
 
-    def all_topics(self):
-        return self.model.show_topics(self.model.num_topics)
+    def topic_words(self, topic_id, limit=10):
+        return self.model.show_topic(topicid=topic_id, topn=limit)
 
     def identify_topic(self, words):
         return self.model.get_document_topics(self.dictionary.doc2bow(words))

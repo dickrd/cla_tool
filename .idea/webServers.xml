@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="83aecef7-add1-40d9-89a1-8e52d0e5404d" name="qc" url="http://qc.hehehey.com">
-        <fileTransfer host="qc.hehehey.com" port="22" privateKey="F:\Application\tools-x-win32\id_rsa" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
+        <fileTransfer host="qc.hehehey.com" port="22" privateKey="E:\application\tools-x-win32\id_rsa" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

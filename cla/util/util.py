@@ -124,11 +124,12 @@ def cut_words_in(path, encoding="utf-8", skip_prefixes=None, strip=None, output_
     return result_path
 
 
-def cut_words(line):
+def cut_words(line, cleanup=False):
     """
     Cut a sentence in unicode.
     
     :param line: Unicode sentence.
+    :param cleanup: Delete meaningless words, like "这个", if true. 
     :return: A list of words.
     """
 
@@ -138,9 +139,27 @@ def cut_words(line):
     # Delete punctuation words.
     content = ''.join(ch for ch in line if category(ch)[0] != 'P')
 
-    # Word segmentation.
-    terms = jieba.cut(content)
-    return map(unicode, terms)
+    if cleanup:
+        import jieba.posseg as pseg
+        words = []
+        # POS tagging.
+        terms = pseg.cut(content)
+        for term, tag in terms:
+            if (
+                tag.startswith(u"c") or tag.startswith(u"e") or
+                tag.startswith(u"r") or tag.startswith(u"p") or
+                tag.startswith(u"u") or tag.startswith(u"w") or
+                tag.startswith(u"y") or tag.startswith(u"v") or
+                tag.startswith(u"m") or tag.startswith(u"q") or
+                tag.startswith(u"d")
+            ):
+                continue
+            words.append(term)
+        return words
+    else:
+        # Word segmentation.
+        terms = jieba.cut(content)
+        return map(unicode, terms)
 
 
 class CutDocument(object):
@@ -148,7 +167,7 @@ class CutDocument(object):
     Iterate though document, generates a list of cut words per-line.
     """
 
-    def __init__(self, document, cut=True, encoding="utf-8", skip_prefixes=None, strip=None):
+    def __init__(self, document, cut=True, encoding="utf-8", skip_prefixes=None, strip=None, cleanup=False):
         """
         Constructor.
         
@@ -157,6 +176,7 @@ class CutDocument(object):
         :param encoding: Encoding of the document.
         :param skip_prefixes: Lines start with this prefix will be skipped.
         :param strip: Chars to be stripped out.
+        :param cleanup: Delete meaningless words, like "这个", if true. 
         """
 
         self.document = document
@@ -164,6 +184,7 @@ class CutDocument(object):
         self.encoding = encoding
         self.skip_prefixes = skip_prefixes
         self.strip = strip
+        self.cleanup = cleanup
 
     def __iter__(self):
         if isinstance(self.document, list):
@@ -190,4 +211,4 @@ class CutDocument(object):
                         if skip:
                             continue
 
-                    yield cut_words(content)
+                    yield cut_words(content, cleanup=self.cleanup)
