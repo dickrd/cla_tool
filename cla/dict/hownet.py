@@ -1,5 +1,5 @@
 # coding=utf-8
-from cla.util import file_util
+from cla.util import util
 
 
 class Hownet(object):
@@ -11,16 +11,16 @@ class Hownet(object):
                  negative_emotions_path,
                  negative_judgement_path,
                  strength_path):
-        self.positive_emotions = file_util.read_as_set(positive_emotions_path, encoding="gbk", skip=1)
-        self.positive_judgement = file_util.read_as_set(positive_judgement_path, encoding="gbk", skip=1)
-        self.negative_emotions = file_util.read_as_set(negative_emotions_path, encoding="gbk", skip=1)
-        self.negative_judgement = file_util.read_as_set(negative_judgement_path, encoding="gbk", skip=1)
-        self.strength_most = file_util.read_as_set(strength_path, encoding="gbk", skip=3)
-        self.strength_very = file_util.read_as_set(strength_path, encoding="gbk", skip=74)
-        self.strength_more = file_util.read_as_set(strength_path, encoding="gbk", skip=118)
-        self.strength_ish = file_util.read_as_set(strength_path, encoding="gbk", skip=157)
-        self.strength_week = file_util.read_as_set(strength_path, encoding="gbk", skip=188)
-        self.strength_over = file_util.read_as_set(strength_path, encoding="gbk", skip=202)
+        self.positive_emotions = util.read_as_set(positive_emotions_path, encoding="gbk", skip=1)
+        self.positive_judgement = util.read_as_set(positive_judgement_path, encoding="gbk", skip=1)
+        self.negative_emotions = util.read_as_set(negative_emotions_path, encoding="gbk", skip=1)
+        self.negative_judgement = util.read_as_set(negative_judgement_path, encoding="gbk", skip=1)
+        self.strength_most = util.read_as_set(strength_path, encoding="gbk", skip=3)
+        self.strength_very = util.read_as_set(strength_path, encoding="gbk", skip=74)
+        self.strength_more = util.read_as_set(strength_path, encoding="gbk", skip=118)
+        self.strength_ish = util.read_as_set(strength_path, encoding="gbk", skip=157)
+        self.strength_week = util.read_as_set(strength_path, encoding="gbk", skip=188)
+        self.strength_over = util.read_as_set(strength_path, encoding="gbk", skip=202)
 
     def score(self, words_of_sentence):
         """
