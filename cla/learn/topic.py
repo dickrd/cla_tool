@@ -1,11 +1,11 @@
 class TopicModel(object):
 
-    def __init__(self, documents, cut=True, num_topics=10):
+    def __init__(self, documents, cut=True, num_topics=10, min_length=1):
         from cla.util.util import CutDocument
         from gensim.corpora import Dictionary
         from gensim.models import LdaModel
 
-        self.document = CutDocument(documents, cut, cleanup=True)
+        self.document = CutDocument(documents, cut, cleanup=True, min_length=min_length)
         self.dictionary = Dictionary(self.document)
         self.model = LdaModel(BowCorpus(self.document, self.dictionary),
                               id2word=self.dictionary,
@@ -43,7 +43,7 @@ class BowCorpus(object):
 
 class TopicClustering(object):
 
-    def __init__(self, vector_model_path, document_path, cut=True, n_clusters=8):
+    def __init__(self, vector_model_path, document_path, cut=True, num_topics=8, min_length=1):
         from cla.learn.word2vec import VectorModel
         from sklearn.cluster import KMeans
         from cla.util.util import CutDocument
@@ -52,9 +52,9 @@ class TopicClustering(object):
         self.doc2vec = VectorModel(source_file_path=vector_model_path)
 
         vectors = []
-        for words in CutDocument(document_path, cut, cleanup=True):
+        for words in CutDocument(document_path, cut, cleanup=True, min_length=min_length):
             vectors.append(self.doc2vec.to_vector(words))
-        self.clustering = KMeans(n_clusters=n_clusters)
+        self.clustering = KMeans(n_clusters=num_topics)
         self.clustering.fit(np.asarray(vectors))
 
     def cluster(self, words):

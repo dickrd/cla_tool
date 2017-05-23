@@ -167,7 +167,8 @@ class CutDocument(object):
     Iterate though document, generates a list of cut words per-line.
     """
 
-    def __init__(self, document, cut=True, encoding="utf-8", skip_prefixes=None, strip=None, cleanup=False):
+    def __init__(self, document, cut=True, encoding="utf-8",
+                 skip_prefixes=None, strip=None, cleanup=False, min_length=1):
         """
         Constructor.
         
@@ -185,6 +186,7 @@ class CutDocument(object):
         self.skip_prefixes = skip_prefixes
         self.strip = strip
         self.cleanup = cleanup
+        self.min_length = min_length
 
     def __iter__(self):
         if isinstance(self.document, list):
@@ -211,4 +213,7 @@ class CutDocument(object):
                         if skip:
                             continue
 
-                    yield cut_words(content, cleanup=self.cleanup)
+                    if len(content) < self.min_length:
+                        continue
+                    cut = cut_words(content, cleanup=self.cleanup)
+                    yield cut
