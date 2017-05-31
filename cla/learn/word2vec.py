@@ -15,7 +15,6 @@ class VectorModel(object):
         """
         if source_file_path:
             self.model = Doc2Vec.load(source_file_path)
-            self.model.n_similarity().docvecs.n_similarity()
         else:
             self.model = Doc2Vec(min_count=10, window=10, size=200, sample=1e-4, negative=5, workers=8)
 
