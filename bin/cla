@@ -18,6 +18,7 @@ def main():
     parser.add_argument("-s", "--skip-lines", nargs="+", help="skip lines with the specified prefixes when cutting")
     parser.add_argument("-e", "--encoding", default="utf-8", help="specify file encoding")
     parser.add_argument("-D", "--daemon", action="store_true", help="run as a background server, supports classify")
+    parser.add_argument("-C", "--cleanup", action="store_true", help="cleaup meaningless words")
     parser.add_argument("--source-type", default="qq", help="source type of the input, supported types are qq")
     parser.add_argument("--min-length", default=20, type=int, help="min sentence length for topic learning")
     args = parser.parse_args()
@@ -43,7 +44,8 @@ def main():
         result_path = util.cut_words_in(args.input,
                                         encoding=args.encoding,
                                         output_path=args.output_file,
-                                        skip_prefixes=args.skip_lines)
+                                        skip_prefixes=args.skip_lines,
+                                        cleanup=args.cleanup)
         print "Done. Words saved ot " + result_path
 
     elif args.action == "learn":
@@ -203,7 +205,7 @@ def main():
         with open(args.input, 'r') as input_file:
             for line in input_file:
                 decoded_line = line.decode(encoding=args.encoding)
-                if len(decoded_line) < 20:
+                if len(decoded_line) < args.min_length:
                     continue
 
                 candidates = model.identify_topic(util.cut_words(decoded_line))

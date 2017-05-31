@@ -98,7 +98,7 @@ def read_as_set(path, encoding="utf-8", skip=0, skip_prefixes=None, strip=None):
     return result_set
 
 
-def cut_words_in(path, encoding="utf-8", skip_prefixes=None, strip=None, output_path=None):
+def cut_words_in(path, encoding="utf-8", skip_prefixes=None, strip=None, output_path=None, cleanup=False):
     """
     Cut each line in the file into words and stores it in the same directory with a "cut_" prefix in file name.
     
@@ -107,6 +107,7 @@ def cut_words_in(path, encoding="utf-8", skip_prefixes=None, strip=None, output_
     :param skip_prefixes: Lines start with this prefix will be skipped.
     :param strip: Chars to be stripped out.
     :param output_path: Path to save output.
+    :param cleanup: Delete meaningless words, like "这个", if true. 
     :return: Path to the result file.
     """
 
@@ -118,7 +119,12 @@ def cut_words_in(path, encoding="utf-8", skip_prefixes=None, strip=None, output_
         result_path = output_path
 
     with open(result_path, 'w') as result_file:
-        for words in CutDocument(path, cut=False, skip_prefixes=skip_prefixes, strip=strip):
+        for words in CutDocument(path,
+                                 cut=False,
+                                 skip_prefixes=skip_prefixes,
+                                 strip=strip,
+                                 cleanup=cleanup,
+                                 encoding=encoding):
             result_line = " ".join(words)
             result_file.write(result_line.encode(encoding=encoding) + "\n")
     return result_path
